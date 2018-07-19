@@ -36,7 +36,11 @@ export default class ResizableBox extends React.Component<ResizableProps, State>
   };
 
   componentWillReceiveProps(nextProps: ResizableProps) {
-    if (nextProps.width !== this.props.width || nextProps.height !== this.props.height) {
+
+		var { props } = this;
+		var { width, height } = props;
+		if ( (!isNaN(width) && nextProps.width !== width) ||
+				 (!isNaN(height) &&  nextProps.height !== height ) ) {
       this.setState({
         width: nextProps.width,
         height: nextProps.height

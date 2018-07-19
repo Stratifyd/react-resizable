@@ -60,7 +60,11 @@ var ResizableBox = function (_React$Component) {
   }
 
   ResizableBox.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-    if (nextProps.width !== this.props.width || nextProps.height !== this.props.height) {
+    var props = this.props;
+    var width = props.width,
+        height = props.height;
+
+    if (!isNaN(width) && nextProps.width !== width || !isNaN(height) && nextProps.height !== height) {
       this.setState({
         width: nextProps.width,
         height: nextProps.height
