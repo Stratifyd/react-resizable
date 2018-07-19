@@ -82,6 +82,7 @@ var ResizableBox = function (_React$Component) {
       if (undefined === height) {
         change.height = box.offsetHeight;
       }
+      this.setState(change);
     }
   };
 

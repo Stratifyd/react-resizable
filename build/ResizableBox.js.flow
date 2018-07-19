@@ -57,7 +57,7 @@ export default class ResizableBox extends React.Component<ResizableProps, State>
 			if( undefined === height ) {
 				change.height = box.offsetHeight;
 			}
-
+			this.setState(change);
 		}
 
 	}
